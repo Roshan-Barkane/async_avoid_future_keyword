@@ -1,0 +1,56 @@
+// ignore_for_file: avoid_print
+
+import 'package:flutter/material.dart';
+
+class Home extends StatefulWidget {
+  const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  late String username;
+  void getData() async {
+    await Future.delayed(const Duration(seconds: 2), () {
+      username = "Roshan";
+    });
+    print("$username ");
+  }
+
+  void showData() {
+    print("jhjhjjjjh");
+  }
+
+  int counter = 1;
+  @override
+  void initState() {
+    super.initState();
+    getData();
+    //showData();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.blueGrey,
+      body: Center(
+        child: TextButton.icon(
+            style: TextButton.styleFrom(backgroundColor: Colors.yellow),
+            onPressed: () {},
+            icon: const Icon(
+              Icons.add_to_home_screen,
+              size: 40,
+              color: Colors.black,
+            ),
+            label: const Text(
+              'Go to',
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.black,
+              ),
+            )),
+      ),
+    );
+  }
+}
